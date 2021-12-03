@@ -1,7 +1,7 @@
 export default {
   target: 'static',
   router: {
-    base: '/cv-portfolio/'
+    base: '/portfolio/'
   },
 
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode

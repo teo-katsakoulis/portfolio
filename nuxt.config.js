@@ -4,6 +4,12 @@ export default {
     base: '/portfolio/'
   },
 
+  loadingIndicator: {
+    name: 'cube-grid',
+    color: '#d35400',
+    background: '#000'
+  },
+
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
@@ -25,10 +31,10 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["~/assets/styles/main.css"],
+  css: ['~/assets/styles/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/vue-particles.js'],
+  plugins: ['~/plugins/vue-particles.js', '~/plugins/vue-typer.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

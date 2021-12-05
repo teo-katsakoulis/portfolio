@@ -102,10 +102,37 @@ a {
 }
 
 /* ----- Custom CSS ----- */
+.vue-particles {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #000;
+}
+
 .main-container {
+  width: 900px;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
+  margin-left: auto;
+  margin-right: auto;
   background: transparent !important;
+}
+
+.main-title {
+  min-height: 100vh;
+  text-align: center;
+  color: #fff;
+  margin-top: 50%;
+}
+
+.vue-typer .custom.char.typed {
+  color: #fff;
+}
+
+.vue-typer .custom.caret {
+  background-color: #fff;
 }

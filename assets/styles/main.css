@@ -1,104 +1,80 @@
+/* ----- General ----- */
 a {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-  }
-.header {
-  width: 100%;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 60px;
-  top: 0;
-  position: sticky;
-  background-color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.logo {
-  width: 40%;
-  max-width: 200px;
-  height: 40px;
-}
-.logo .NuxtLogo {
-  max-width: 30px;
-  margin-left: 10px;
-  max-height: 40px;
-}
-.nav {
-  width: 60%;
-  height: 40px;
-  display: flex;
-  justify-content: space-between;
-  padding-right: 10px;
-  max-width: 300px;
-}
-.nav__link {
-  width: 80px;
-  display: flex;
-  align-items: center;
-  border-radius: 4px;
-  justify-content: center;
-  height: 100%;
-  border: 1px solid #00c58e;
+  text-decoration: none;
+  color: inherit;
   cursor: pointer;
 }
-.nav__link:active {
-  background-color: #00c58e;
-  border: 1px solid #00c58e;
-  color: #fff;
-  box-shadow: 5px 3px 5px 2px #3f41468c;
-}
-.home {
-  padding-top: 30px;
-}
-.home__heading {
+
+/* ----- Navigation ----- */
+nav {
+  position: fixed;
+  display: block;
+  width: 60px;
+  height: 100vh;
+  background-color: #000;
+  border-right: 1px solid #161616;
   text-align: center;
+  z-index: 11;
 }
-.directories {
-  display: flex;
-  box-sizing: border-box;
-  padding: 10px;
-  max-width: 1000px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  justify-content: center;
+
+nav .brand {
+  font-size: 3rem;
+  font-weight: 600;
+  display: block;
+  background-color: #171717;
 }
-@media (min-width: 768px) {
-  .directories {
-    justify-content: space-between;
-  }
+
+nav .menu {
+  display: block;
+  margin-top: 5rem;
 }
-.directory__container {
-  width: 100%;
-  max-width: 220px;
-  cursor: pointer;
-  border-radius: 4px;
-  border: 1px solid #00c58e;
-  display: flex;
-  height: 60px;
-  margin: 10px 5px;
-  margin-right: 0;
-  justify-content: center;
-  align-items: center;
+
+nav .menu a {
+  display: block;
 }
-.directory__name {
-  text-align: center;
+
+nav .menu a, nav .social a {
+  color: #999;
+  -webkit-transition: color 320ms ease-in;
+  -moz-transition: color 320ms ease-in;
+  -ms-transition: color 320ms ease-in;
+  -o-transition: color 320ms ease-in;
+  transition: color 320ms ease-in;
 }
-.directory {
-  width: 100%;
-  margin: 50px auto;
-  max-width: 450px;
-  border-radius: 4px;
-  border: 1px solid #00c58e;
-  box-sizing: border-box;
-  padding: 10px 0;
+
+nav .social {
+  position: absolute;
+  bottom: 50px;
+  left: 17px;
 }
-.directory__info {
-  padding-left: 10px;
-  line-height: 22px;
-  padding-right: 10px;
+
+nav .social a {
+  display: block;
+  margin-bottom: 15px;
+}
+
+nav .menu a:hover, nav .menu a.active, nav .social a:hover {
+  color: #FFA500;
+}
+
+nav .social a svg {
+  width: 20px;
+}
+
+nav .social a .linkedin-icon {
+  width: 25px;
+}
+
+section {
+  min-height: 100vh;
+}
+
+section:nth-child(odd) {
+  background-color: #373737;
+}
+
+section:nth-child(even) {
+  background-color: #444;
 }
 
 /* ----- Custom CSS ----- */
@@ -126,11 +102,16 @@ a {
   min-height: 100vh;
   text-align: center;
   color: #fff;
-  margin-top: 50%;
+  padding-top: 40vh;
 }
 
+/* --- VueTyper --- */
 .vue-typer .custom.char.typed {
-  color: #fff;
+  color: #FFA500;
+}
+
+.vue-typer .custom.char.selected {
+  background-color: #aaa;
 }
 
 .vue-typer .custom.caret {

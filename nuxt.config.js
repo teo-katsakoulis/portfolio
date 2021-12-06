@@ -15,7 +15,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'portfolio',
+    title: 'Theofilos Katsakoulis - Frontend Developer',
     htmlAttrs: {
       lang: 'en'
     },
@@ -51,6 +51,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
+    'nuxt-material-design-icons-iconfont'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

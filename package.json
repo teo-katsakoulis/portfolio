@@ -24,6 +24,8 @@
     "core-js": "^3.15.1",
     "nuxt": "^2.15.7",
     "nuxt-material-design-icons-iconfont": "^1.0.2",
+    "sog-tag-cloud": "^0.1.0",
+    "vue-scroll-reveal": "^1.0.11",
     "vue-scrollactive": "^0.9.3",
     "vue-typer": "^1.2.0"
   },

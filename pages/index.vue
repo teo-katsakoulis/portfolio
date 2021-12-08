@@ -40,36 +40,38 @@
             </h2>
           </div>
         </section>
-        <section id="about">
-          <div class="container">
-            <div class="text-container">
-              <h2 class="blue">About</h2>
-              <p>Lorem ipsum</p>
+        <section id="about" v-scroll-reveal.reset>
+          <div class="section-container">
+            <h2>About</h2>
+            <div class="row">
+              <div class="col-md-6">
+                <p>I’m a Front-End Developer located in Berlin. I have a serious passion for UI effects, animations and creating intuitive, dynamic user experiences.</p>
+                <p>Well-organised person, problem solver, independent employee with high attention to detail.</p>
+                <p>Interested in the entire frontend spectrum and working on ambitious projects with positive people.</p>
+                <!-- <canvas id="canvas"></canvas> -->
+              </div>
+              <div id="tag-cloud" class="col-md-6">
+                <SogTagCloud :tags="tags" :options="options" />
+              </div>
             </div>
           </div>
         </section>
-        <section id="skills">
-          <div class="container">
-            <div class="text-container">
-              <h2 class="blue">Skills</h2>
-              <p>Lorem ipsum</p>
-            </div>
+        <section id="skills" v-scroll-reveal.reset>
+          <div class="section-container">
+            <h2>Skills</h2>
+            <p>Lorem ipsum</p>
           </div>
         </section>
-        <section id="work">
-          <div class="container">
-            <div class="text-container">
-              <h2 class="blue">Work</h2>
-              <p>Lorem ipsum</p>
-            </div>
+        <section id="work" v-scroll-reveal.reset>
+          <div class="section-container">     
+            <h2>Work</h2>
+            <p>Lorem ipsum</p>
           </div>
         </section>
-        <section id="contact">
-          <div class="container">
-            <div class="text-container">
-              <h2 class="blue">Contact</h2>
-              <p>Lorem ipsum</p>
-            </div>
+        <section id="contact" v-scroll-reveal.reset>
+          <div class="section-container">
+            <h2>Contact</h2>
+            <p>Lorem ipsum</p>
           </div>
         </section>
       </div>
@@ -82,7 +84,30 @@
   export default {
     name: "Index",
     components: { NavBar },
-    mounted() {
+    data() {
+      return {
+        tags: [
+          { name: "Vue.js" },
+          { name: "JQuery" },
+          { name: "Javascript" },
+          { name: "HTML" },
+          { name: "CSS" },
+          { name: "SCSS" },
+          { name: "npm" },
+          { name: "gulp.js" },
+          { name: "webpack" },
+          { name: "Bootstrap" },
+          { name: "Nuxt.js" },
+          { name: "Laravel" },
+        ],
+        options: {
+          width: 400,
+          height: 400,
+          radius: 200,
+          opacity: 300,
+          fontSize: 600
+        },
+      };
     }
   };
 </script>

@@ -19,6 +19,12 @@ export default {
     htmlAttrs: {
       lang: 'en'
     },
+    script: [ 
+      {
+      type: 'text/javascript',
+      src: '"~/assets/js/tagcloud.min.js"',
+      body: true
+  }],
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -34,7 +40,7 @@ export default {
   css: ['~/assets/styles/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/vue-particles.js', '~/plugins/vue-typer.js'],
+  plugins: ['~/plugins/vue-particles.js', '~/plugins/vue-typer.js', '~/plugins/vue-scrollactive.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

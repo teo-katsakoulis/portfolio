@@ -5,14 +5,36 @@ a {
   cursor: pointer;
 }
 
+/* ----- VueParticles ----- */
+.vue-particles {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #1d1d1d;
+}
+
+/* --- VueTyper --- */
+.vue-typer .custom.char.typed {
+  color: #FFA500;
+}
+
+.vue-typer .custom.char.selected {
+  background-color: #aaa;
+}
+
+.vue-typer .custom.caret {
+  background-color: #fff;
+}
+
 /* ----- Navigation ----- */
 nav {
   position: fixed;
   display: block;
   width: 60px;
   height: 100vh;
-  background-color: #000;
-  border-right: 1px solid #161616;
+  background-color: #181818;
   text-align: center;
   z-index: 11;
 }
@@ -46,6 +68,7 @@ nav .social {
   position: absolute;
   bottom: 50px;
   left: 17px;
+  z-index: 11;
 }
 
 nav .social a {
@@ -65,30 +88,13 @@ nav .social a .linkedin-icon {
   width: 25px;
 }
 
+/* ----- Main Content ----- */
 section {
   min-height: 100vh;
 }
 
-section:nth-child(odd) {
-  background-color: #373737;
-}
-
-section:nth-child(even) {
-  background-color: #444;
-}
-
-/* ----- Custom CSS ----- */
-.vue-particles {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #000;
-}
-
 .main-container {
-  width: 900px;
+  max-width: 1140px;
   position: absolute;
   top: 0;
   left: 0;
@@ -105,15 +111,24 @@ section:nth-child(even) {
   padding-top: 40vh;
 }
 
-/* --- VueTyper --- */
-.vue-typer .custom.char.typed {
+.scrollactive-item {
+  animation-duration: 2s;
+  animation-iteration-count: initial;
+}
+
+.menu-icon-bounce {
+  animation-name: bounce;
+  animation-timing-function: cubic-bezier(0.180, 0.640, 0.320, 1);
+}
+
+.menu-icon-bounce i {
   color: #FFA500;
 }
 
-.vue-typer .custom.char.selected {
-  background-color: #aaa;
-}
-
-.vue-typer .custom.caret {
-  background-color: #fff;
+@keyframes bounce {
+  0%   { transform: scale(1,.8)      translateY(0); }
+  10%  { transform: scale(1.1,.8)   translateY(0); }
+  30%  { transform: scale(.9,1)   translateY(-8px); }
+  50%  { transform: scale(1.05,.85) translateY(0); }
+  100% { transform: scale(1,1)      translateY(0); }
 }

@@ -40,19 +40,27 @@ nav {
 }
 
 nav .brand {
-  font-size: 3rem;
-  font-weight: 600;
   display: block;
-  background-color: #171717;
+  position: relative;
+  background-color: #101010;
+  padding: 8px;
 }
 
-nav .menu {
-  display: block;
-  margin-top: 5rem;
+nav .brand a {
+  position: absolute;
+  left: 20px;
+  font-size: 35px;
+  font-weight: 600;
+  color: #999;
 }
 
 nav .menu a {
   display: block;
+}
+
+nav .social a {
+  display: block;
+  margin-bottom: 15px;
 }
 
 nav .menu a, nav .social a {
@@ -64,16 +72,23 @@ nav .menu a, nav .social a {
   transition: color 320ms ease-in;
 }
 
+nav .brand a:hover {
+  color: #999;
+  text-decoration: none;
+}
+
+nav .menu {
+  display: block;
+  position: absolute;
+  top: 30%;
+  margin-top: 5rem;
+}
+
 nav .social {
   position: absolute;
   bottom: 50px;
   left: 17px;
   z-index: 11;
-}
-
-nav .social a {
-  display: block;
-  margin-bottom: 15px;
 }
 
 nav .menu a:hover, nav .menu a.active, nav .social a:hover {
@@ -134,18 +149,142 @@ section {
 }
 
 .section-container {
-  color: wheat;
-  background: linear-gradient(to bottom, rgba(50,50,50,0.4), rgba(80,80,80,0.4));
-  box-shadow: 0 5px 20px 1px #121212;
-  border-radius: 15px;
+  position: relative;
+  color: #fff;
   padding: 40px;
+
+  /* background: linear-gradient(to bottom, rgba(50,50,50,0.4), rgba(80,80,80,0.4));
+  box-shadow: 0 5px 20px 1px #121212;
+  border-radius: 15px; */
 }
 
 .section-container h2 {
-  color: orange;
+  position: relative;
+  width: fit-content;
+  text-align: center;
+  color: #fff;
+  padding: 16px 24px;
+  margin: 0 auto 50px;
+}
+
+.section-container h2::before, .section-container h2::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: solid #FFA500;
+}
+    
+.section-container h2::before {
+  border-width: 2px 0 0 2px;
+  top: 5px;
+  left: 5px;
+}
+
+.section-container h2::after {
+  border-width: 0 2px 2px 0;
+  right: 5px;
+  bottom: 5px;
+}
+
+.section-container:hover h2::after, .section-container:hover h2::before {
+    display: block;
 }
 
 /* --- TagCloud --- */
+.tag-cloud {
+  overflow: overlay;
+}
+
 .tag-cloud a text {
+  cursor: default;
+  filter: invert(100%);
   color: #fff !important;
+}
+
+/* --- Skills Section --- */
+.skill-container {
+  text-align: center;
+}
+
+.skill-container p {
+  color: #fff;
+}
+
+.hex-wrap {
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+}
+
+.animated.flip-in-x {
+  animation: flipInX 0.75s ease both;
+}
+
+.hexagon {
+  display: inline-block;
+  width: calc(100% * 0.57735);
+  height: 100%;
+  background: linear-gradient(-45deg, #ee7752, #f9b945, #8b6317, #d66430);
+  background-size: 400% 400%;
+  animation: gradient 5s infinite linear;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.hexagon::before {
+  background: inherit;
+  content: "";
+  height: inherit;
+  position: absolute;
+  right: calc((100% / 2) - ((100% * 0.57735) / 2));
+  top: 0;
+  transform: rotateZ(60deg);
+  width: inherit;
+}
+
+.hexagon::after {
+  background: inherit;
+  content: "";
+  height: inherit;
+  position: absolute;
+  right: calc((100% / 2) - ((100% * 0.57735) / 2));
+  top: 0;
+  transform: rotateZ(-60deg);
+  width: inherit;
+}
+
+.hexagon i {
+  color: #fff;
+  font-size: 44pt;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 20px;
+  z-index: 1;
+}
+
+.skill-title {
+  font-size: 18pt;
+  margin: 15px 0 5px 0;
+}
+
+.about-me {
+  margin-top: 60px;
+}
+
+.personal-text {
+  padding: 40px 20px 0;
 }

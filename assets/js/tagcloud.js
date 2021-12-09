@@ -1,4 +1,6 @@
 /*
+<canvas id="canvas"></canvas>
+
 mounted() {
       const plugin = document.createElement("script");
       plugin.setAttribute(

@@ -39,6 +39,12 @@ nav {
   z-index: 11;
 }
 
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+}
+
 nav .brand {
   display: block;
   position: relative;
@@ -136,9 +142,16 @@ section {
   top: 0;
   left: 0;
   right: 0;
+  background: transparent !important;
+  padding: 0 60px;
   margin-left: auto;
   margin-right: auto;
-  background: transparent !important;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    padding: 0;
+  }
 }
 
 .main-title {
@@ -162,6 +175,7 @@ section {
   position: relative;
   width: fit-content;
   text-align: center;
+  cursor: default;
   color: #fff;
   padding: 16px 24px;
   margin: 0 auto 50px;
@@ -173,6 +187,7 @@ section {
   width: 20px;
   height: 20px;
   border: solid #FFA500;
+  transition: width 1s, height 1s;
 }
     
 .section-container h2::before {
@@ -187,13 +202,20 @@ section {
   bottom: 5px;
 }
 
-.section-container:hover h2::after, .section-container:hover h2::before {
-    display: block;
+.section-container h2:hover::after, .section-container h2:hover::before {
+  width: 30px;
+  height: 30px;
 }
 
 /* --- TagCloud --- */
 .tag-cloud {
   overflow: overlay;
+}
+
+@media (max-width: 768px) {
+  .tag-cloud {
+    transform: scale(0.7);
+  }
 }
 
 .tag-cloud a text {
@@ -217,6 +239,7 @@ section {
   width: 100px;
   height: 100px;
   text-align: center;
+  cursor: default;
 }
 
 .animated.flip-in-x {
@@ -278,7 +301,7 @@ section {
 
 .skill-title {
   font-size: 18pt;
-  margin: 15px 0 5px 0;
+  margin: 15px 0 10px;
 }
 
 .about-me {

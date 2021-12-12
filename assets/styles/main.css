@@ -29,7 +29,7 @@ a {
 }
 
 /* ----- Navigation ----- */
-nav {
+.main-nav {
   position: fixed;
   display: block;
   width: 60px;
@@ -40,19 +40,19 @@ nav {
 }
 
 @media (max-width: 768px) {
-  nav {
+  .main-nav {
     display: none;
   }
 }
 
-nav .brand {
+.main-nav .brand {
   display: block;
   position: relative;
   background-color: #101010;
   padding: 8px;
 }
 
-nav .brand a {
+.main-nav .brand a {
   position: absolute;
   left: 20px;
   font-size: 35px;
@@ -60,16 +60,16 @@ nav .brand a {
   color: #999;
 }
 
-nav .menu a {
+.main-nav .menu a {
   display: block;
 }
 
-nav .social a {
+.main-nav .social a {
   display: block;
   margin-bottom: 15px;
 }
 
-nav .menu a, nav .social a {
+.main-nav .menu a, .main-nav .social a {
   color: #999;
   -webkit-transition: color 320ms ease-in;
   -moz-transition: color 320ms ease-in;
@@ -78,35 +78,35 @@ nav .menu a, nav .social a {
   transition: color 320ms ease-in;
 }
 
-nav .brand a:hover {
+.main-nav .brand a:hover {
   color: #999;
   text-decoration: none;
 }
 
-nav .menu {
+.main-nav .menu {
   display: block;
-  position: absolute;
-  top: 30%;
-  margin-top: 5rem;
+  position: relative;
+  top: 40%;
+  transform: translateY(-50%);
 }
 
-nav .social {
+.main-nav .social {
   position: absolute;
-  bottom: 50px;
+  bottom: 30px;
   left: 17px;
   z-index: 11;
 }
 
-nav .menu a:hover, nav .menu a.active, nav .social a:hover {
+.main-nav .menu a:hover, .main-nav .menu a.active, .main-nav .social a:hover {
   color: #FFA500;
 }
 
-nav .social a svg {
-  width: 20px;
+.main-nav .social a svg {
+  width: 15px;
 }
 
-nav .social a .linkedin-icon {
-  width: 25px;
+.main-nav .social a .linkedin-icon {
+  width: 20px;
 }
 
 .scrollactive-item {
@@ -171,17 +171,17 @@ section {
   border-radius: 15px; */
 }
 
-.section-container h2 {
+.section-container h2.section-title {
   position: relative;
   width: fit-content;
   text-align: center;
   cursor: default;
   color: #fff;
   padding: 16px 24px;
-  margin: 0 auto 50px;
+  margin: 0 auto 60px;
 }
 
-.section-container h2::before, .section-container h2::after {
+.section-container h2.section-title::before, .section-container h2.section-title::after {
   content: "";
   position: absolute;
   width: 20px;
@@ -190,19 +190,19 @@ section {
   transition: width 1s, height 1s;
 }
     
-.section-container h2::before {
+.section-container h2.section-title::before {
   border-width: 2px 0 0 2px;
   top: 5px;
   left: 5px;
 }
 
-.section-container h2::after {
+.section-container h2.section-title::after {
   border-width: 0 2px 2px 0;
   right: 5px;
   bottom: 5px;
 }
 
-.section-container h2:hover::after, .section-container h2:hover::before {
+.section-container h2.section-title:hover::after, .section-container h2.section-title:hover::before {
   width: 30px;
   height: 30px;
 }
@@ -210,6 +210,7 @@ section {
 /* --- TagCloud --- */
 .tag-cloud {
   overflow: overlay;
+  margin-top: 30px;
 }
 
 @media (max-width: 768px) {
@@ -224,7 +225,7 @@ section {
   color: #fff !important;
 }
 
-/* --- Skills Section --- */
+/* --- About Section --- */
 .skill-container {
   text-align: center;
 }
@@ -305,9 +306,102 @@ section {
 }
 
 .about-me {
-  margin-top: 60px;
+  margin-top: 75px;
 }
 
 .personal-text {
   padding: 40px 20px 0;
+}
+
+.personal-text h2 {
+  margin-bottom: 25px;
+}
+
+/* --- Contact Section --- */
+.contact-form span {
+  display: block;
+  width: 510px;
+  margin: 35px auto;
+}
+
+.contact-form span::after {
+  display: block;
+  content: '';
+  border-bottom: 2px solid #FFA500;  
+  transform: scaleX(0);  
+  transition: transform 450ms ease-in-out;
+  transform-origin: 0% 50%;
+  margin-top: -1px;
+}
+
+.contact-form span:hover::after{
+  transform: scaleX(1);
+}
+
+.contact-form input, .contact-form textarea {
+  display: block;
+  width: 100%;
+  height: 80px;
+  font-size: 16px;
+  color: #fff;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #555;
+}
+
+.contact-form input:focus-visible, .contact-form textarea:focus-visible {
+  outline: 0;
+}
+
+.contact-form button {
+  display: block;
+  font-size: 18px;
+  color: #FFA500;
+  background: transparent;
+  border: none;
+  border: 1px solid #FFA500;
+  padding: 10px 30px;
+  margin: 60px auto 0;
+  transition: linear .2s;
+}
+
+.contact-form button:hover {
+  color: #101010;
+  background: #FFA500;
+}
+
+h5.email-sent {
+  position: relative;
+  width: fit-content;
+  color: #4F8A10;
+  background: #DFF2BF;
+  border-radius: 5px;
+  padding: 6px 15px 6px 50px;
+  margin: 0 auto 30px;
+}
+
+h5.email-sent i {
+  position: absolute;
+  top: 3px;
+  left: 12px;
+  font-size: 30px;
+  color: #e31b23;
+}
+
+h5.email-failed {
+  position: relative;
+  width: fit-content;
+  color: #D8000C;
+  background: #FFBABA;
+  border-radius: 5px;
+  padding: 6px 15px 6px 50px;
+  margin: 0 auto 30px;
+}
+
+h5.email-failed i {
+  position: absolute;
+  top: 3px;
+  left: 12px;
+  font-size: 30px;
+  color: #D8000C;
 }

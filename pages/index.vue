@@ -40,9 +40,8 @@
         </div>
       </section>
       <section id="about" v-scroll-reveal.reset>
-        <canvas id="myCanvas"></canvas>
         <div class="section-container">
-          <h2>About</h2>
+          <h2 class="section-title">About</h2>
           <div class="row">
             <div class="col-md-3 skill-container">
               <div class="hex-wrap">
@@ -91,6 +90,7 @@
           </div>
           <div class="row about-me">
             <div class="col-md-6 personal-text">
+              <h2>Me, Myself and I</h2>
               <p>I’m a Front-End Developer located in Berlin. I have a serious passion for UI effects, animations and creating intuitive, dynamic user experiences.</p>
               <p>Well-organised person, problem solver, independent employee with high attention to detail.</p>
               <p>Interested in the entire frontend spectrum and working on ambitious projects with positive people.</p>
@@ -103,14 +103,21 @@
       </section>
       <section id="work" v-scroll-reveal.reset>
         <div class="section-container">     
-          <h2>Work</h2>
+          <h2 class="section-title">Work</h2>
           <p>Lorem ipsum</p>
         </div>
       </section>
       <section id="contact" v-scroll-reveal.reset>
         <div class="section-container">
-          <h2>Contact</h2>
-          <p>Lorem ipsum</p>
+          <h2 class="section-title">Contact</h2>
+          <h5 v-if="email_sent" class="email-sent"><i class="material-icons">favorite</i> <span>Thank you for your message!</span></h5>
+          <h5 v-if="email_failed" class="email-failed"><i class="material-icons">sentiment_dissatisfied</i> Message was not sent, please try again</h5>
+          <form @submit.prevent="submitForm" class="contact-form">
+            <span><input type="text" name="name" placeholder="Name" v-model="name" /></span>
+            <span><input type="email" name="email" placeholder="Email" v-model="email" /></span>
+            <span><textarea name="message" placeholder="Message" v-model="message"></textarea></span>
+            <button type="submit">Submit</button>
+          </form>
         </div>
       </section>
     </div>
@@ -118,6 +125,7 @@
 </template>
 
 <script>
+  import axios from 'axios';
   import NavBar from "@/components/NavBar";
   export default {
     name: "Index",
@@ -144,13 +152,35 @@
           { name: "JSON" }
         ],
         options: {
-          width: 545,
-          height: 400,
+          width: 480,
+          height: 340,
           radius: 200,
           opacity: 300,
           fontSize: 600
         },
+        name: '',
+        email: '',
+        message: '',
+        endpoint: 'https://formspree.io/f/mnqwqvww',
+        email_sent: false,
+        email_failed: false
       };
+    },
+    methods: {
+      async submitForm() {
+        const data = {
+          name: this.name,
+          email: this.email,
+          message: this.message,
+        }
+        const response = await axios.post(this.endpoint, data);
+        if (response.status === 200) {
+          this.email_sent = true;
+        }
+        else {
+          this.email_failed = true;
+        }
+      }
     }
   };
 </script>

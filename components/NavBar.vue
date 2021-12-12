@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav class="main-nav">
     <div class="brand">
       <a href="#home">T</a>
       <svg id="logo" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 84 96">
@@ -9,7 +9,7 @@
         </g>
       </svg>
     </div>
-    <scrollactive active-class="menu-icon-bounce" :offset="180" class="menu">
+    <scrollactive active-class="menu-icon-bounce" :offset="80" class="menu">
       <a href="#home" class="scrollactive-item"><i class="material-icons">home</i></a><br>
       <a href="#about" class="scrollactive-item"><i class="material-icons">account_circle</i></a><br>
       <!-- <a href="#skills" class="scrollactive-item"><i class="material-icons">settings</i></a><br> -->

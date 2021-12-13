@@ -27,6 +27,7 @@
     "nuxt-material-design-icons-iconfont": "^1.0.2",
     "sog-tag-cloud": "^0.1.0",
     "vue-axios": "^3.4.0",
+    "vue-quick-menu": "^1.0.7",
     "vue-scroll-reveal": "^1.0.11",
     "vue-scrollactive": "^0.9.3",
     "vue-typer": "^1.2.0"

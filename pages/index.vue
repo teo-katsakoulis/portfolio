@@ -95,7 +95,7 @@
               <p>Well-organised person, problem solver, independent employee with high attention to detail.</p>
               <p>Interested in the entire frontend spectrum and working on ambitious projects with positive people.</p>
             </div>
-            <div id="tag-cloud" class="col-md-6" ref="tagcloud">
+            <div id="tag-cloud" ref="tagcloud" class="col-md-6">
               <SogTagCloud :tags="tags" :options="options" />
             </div>
           </div>
@@ -112,10 +112,10 @@
           <h2 class="section-title">Contact</h2>
           <h5 v-if="email_sent" class="email-sent"><i class="material-icons">favorite</i> <span>Thank you for your message!</span></h5>
           <h5 v-if="email_failed" class="email-failed"><i class="material-icons">sentiment_dissatisfied</i> Message was not sent, please try again</h5>
-          <form @submit.prevent="submitForm" class="contact-form">
-            <span><input type="text" name="name" placeholder="Name" v-model="name" /></span>
-            <span><input type="email" name="email" placeholder="Email" v-model="email" /></span>
-            <span><textarea name="message" placeholder="Message" v-model="message"></textarea></span>
+          <form class="contact-form" @submit.prevent="submitForm">
+            <span><input v-model="name" type="text" name="name" placeholder="Name" /></span>
+            <span><input v-model="email" type="email" name="email" placeholder="Email" /></span>
+            <span><textarea v-model="message" name="message" placeholder="Message"></textarea></span>
             <button type="submit">Submit</button>
           </form>
         </div>
@@ -152,7 +152,7 @@
           { name: "JSON" }
         ],
         options: {
-          width: 480,
+          width: 470,
           height: 340,
           radius: 200,
           opacity: 300,
@@ -165,6 +165,19 @@
         email_sent: false,
         email_failed: false
       };
+    },
+    mounted() {
+      const elements = document.getElementsByClassName("sub-menu");
+
+      const myFunction = function() {
+         console.log("clicked")
+         Array.from(document.querySelectorAll('.quick-menu.active')).forEach((el) => el.classList.remove('active'));
+
+      };
+
+      for (let i = 0; i < elements.length; i++) {
+          elements[i].addEventListener('click', myFunction, false);
+      }
     },
     methods: {
       async submitForm() {

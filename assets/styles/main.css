@@ -1,4 +1,8 @@
 /* ----- General ----- */
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -216,6 +220,13 @@ section {
 @media (max-width: 768px) {
   .tag-cloud {
     transform: scale(0.7);
+    margin: 50px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .tag-cloud {
+    display: none;
   }
 }
 
@@ -324,6 +335,12 @@ section {
   margin: 35px auto;
 }
 
+@media (max-width: 768px) {
+  .contact-form span {
+    width: 100%;
+  }
+}
+
 .contact-form span::after {
   display: block;
   content: '';
@@ -404,4 +421,23 @@ h5.email-failed i {
   left: 12px;
   font-size: 30px;
   color: #D8000C;
+}
+
+/* --- Mobile navigation --- */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  width: 100%;
+  background: #181818;
+  z-index: 11;
+}
+
+@media (max-width: 768px) {
+  .mobile-nav {
+    display: block;
+  }
+}
+
+.quick-menu .sub-menu a i {
+  margin-top: 7px !important;
 }

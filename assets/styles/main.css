@@ -442,17 +442,6 @@ h5.email-failed i {
   color: #D8000C;
 }
 
-.section-container .social-mobile .mobile-icons-bottom {
-  display: none;
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /* --- Mobile navigation --- */
 .mobile-nav {
   display: none;
@@ -469,8 +458,19 @@ h5.email-failed i {
 }
 
 /* --- Mobile social-icons --- */
+.section-container .social-mobile {
+  display: none;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media (max-width: 768px) {
-  .section-container .social-mobile .mobile-social-icons {
+  .section-container .social-mobile {
     display: block;
   }
 }
@@ -479,7 +479,7 @@ h5.email-failed i {
   position: relative;
   display: inline-block;
   width: 40px;
-  margin-right: 40px;
+  margin: 0 20px;
 }
 
 .section-container .social-mobile .mobile-social-icons i {

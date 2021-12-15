@@ -1,5 +1,10 @@
 # portfolio
 
+My personal github pages website.
+You can check it here:
+https://github.com/teo-katsakoulis/portfolio
+
+
 ## Build Setup
 
 ```bash

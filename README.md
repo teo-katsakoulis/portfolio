@@ -1,8 +1,8 @@
 # portfolio
 
-My personal github pages website.
-You can check it here:
-https://github.com/teo-katsakoulis/portfolio
+My personal github pages website.<br>
+You can check it here:<br>
+https://teo-katsakoulis.github.io/portfolio/
 
 
 ## Build Setup

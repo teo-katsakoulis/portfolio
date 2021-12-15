@@ -85,6 +85,16 @@ a {
 .main-nav .brand a:hover {
   color: #999;
   text-decoration: none;
+  animation: flip 1s linear; 
+}
+
+@keyframes flip{
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
 }
 
 .main-nav .menu {
@@ -166,7 +176,6 @@ section {
 }
 
 .section-container {
-  position: relative;
   color: #fff;
   padding: 40px;
 
@@ -239,6 +248,12 @@ section {
 /* --- About Section --- */
 .skill-container {
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .skill-container {
+    margin-bottom: 50px;
+  }
 }
 
 .skill-container p {
@@ -336,6 +351,10 @@ section {
 }
 
 @media (max-width: 768px) {
+  .contact-form {
+    margin-bottom: 150px;
+  }
+
   .contact-form span {
     width: 100%;
   }
@@ -423,6 +442,17 @@ h5.email-failed i {
   color: #D8000C;
 }
 
+.section-container .social-mobile .mobile-icons-bottom {
+  display: none;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* --- Mobile navigation --- */
 .mobile-nav {
   display: none;
@@ -438,6 +468,23 @@ h5.email-failed i {
   }
 }
 
-.quick-menu .sub-menu a i {
-  margin-top: 7px !important;
+/* --- Mobile social-icons --- */
+@media (max-width: 768px) {
+  .section-container .social-mobile .mobile-social-icons {
+    display: block;
+  }
+}
+
+.section-container .social-mobile .mobile-social-icons {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  margin-right: 40px;
+}
+
+.section-container .social-mobile .mobile-social-icons i {
+  position: absolute;
+  top: -30px;
+  left: -4px;
+  font-size: 50px;
 }

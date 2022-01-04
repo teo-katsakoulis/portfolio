@@ -90,10 +90,11 @@
           </div>
           <div class="row about-me">
             <div class="col-md-6 personal-text">
-              <h2>Me, Myself and I</h2>
+              <h2>About me</h2>
               <p>I’m a Front-End Developer located in Berlin. I have a serious passion for UI effects, animations and creating intuitive, dynamic user experiences.</p>
               <p>Well-organised person, problem solver, independent employee with high attention to detail.</p>
               <p>Interested in the entire frontend spectrum and working on ambitious projects with positive people.</p>
+              <a href="CV.pdf" target="_blank">Check out my CV!</a>
             </div>
             <div id="tag-cloud" ref="tagcloud" class="col-md-6">
               <SogTagCloud :tags="tags" :options="options" />
@@ -113,9 +114,18 @@
           <h5 v-if="email_sent" class="email-sent"><i class="material-icons">favorite</i> <span>Thank you for your message!</span></h5>
           <h5 v-if="email_failed" class="email-failed"><i class="material-icons">sentiment_dissatisfied</i> Message was not sent, please try again</h5>
           <form class="contact-form" @submit.prevent="submitForm">
-            <span><input v-model="name" type="text" name="name" placeholder="Name" /></span>
-            <span><input v-model="email" type="email" name="email" placeholder="Email" /></span>
-            <span><textarea v-model="message" name="message" placeholder="Message"></textarea></span>
+            <div class="form-group" :class="{ 'not-empty': name !== '' }">
+              <input v-model="name" type="text" name="name" id="name" class="form-control" />
+              <label for="name" class="animated-label">Name</label>
+            </div>
+            <div class="form-group" :class="{ 'not-empty': email !== '' }">
+              <input v-model="email" type="email" name="email" id="email" class="form-control" />
+              <label for="email" class="animated-label">Email</label>
+            </div>
+            <div class="form-group" :class="{ 'not-empty': message !== '' }">
+              <textarea v-model="message" name="message" id="message" class="form-control"></textarea>
+              <label for="message" class="animated-label">Message</label>
+            </div>
             <button type="submit">Submit</button>
           </form>
           <div class="social-mobile">
@@ -199,7 +209,9 @@
           message: this.message,
         }
         const response = await axios.post(this.endpoint, data);
+        this.$refs.anyName.reset();
         if (response.status === 200) {
+          
           this.email_sent = true;
         }
         else {

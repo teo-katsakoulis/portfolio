@@ -1,4 +1,14 @@
 /* ----- General ----- */
+:root {
+  --primary: #FFA500;
+  --secondary: #999;
+  --background: #1d1d1d;
+  --success-color: #4F8A10;
+  --success-bg: #DFF2BF;
+  --error-color: #D8000C;
+  --error-bg: #FFBABA;
+ }
+
 html {
   scroll-behavior: smooth;
 }
@@ -16,12 +26,12 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #1d1d1d;
+  background: var(--background);
 }
 
 /* --- VueTyper --- */
 .vue-typer .custom.char.typed {
-  color: #FFA500;
+  color: var(--primary);
 }
 
 .vue-typer .custom.char.selected {
@@ -61,7 +71,13 @@ a {
   left: 20px;
   font-size: 35px;
   font-weight: 600;
-  color: #999;
+  text-decoration: none;
+  color: var(--secondary);
+  transition: color 220ms ease-in;
+}
+
+.main-nav .brand a:hover {
+  color: var(--primary);
 }
 
 .main-nav .menu a {
@@ -74,27 +90,12 @@ a {
 }
 
 .main-nav .menu a, .main-nav .social a {
-  color: #999;
-  -webkit-transition: color 320ms ease-in;
-  -moz-transition: color 320ms ease-in;
-  -ms-transition: color 320ms ease-in;
-  -o-transition: color 320ms ease-in;
-  transition: color 320ms ease-in;
-}
-
-.main-nav .brand a:hover {
-  color: #999;
-  text-decoration: none;
-  animation: flip 1s linear; 
-}
-
-@keyframes flip{
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(360deg);
-  }
+  color: var(--secondary);
+  -webkit-transition: color 250ms ease-in;
+  -moz-transition: color 250ms ease-in;
+  -ms-transition: color 250ms ease-in;
+  -o-transition: color 250ms ease-in;
+  transition: color 250ms ease-in;
 }
 
 .main-nav .menu {
@@ -112,7 +113,7 @@ a {
 }
 
 .main-nav .menu a:hover, .main-nav .menu a.active, .main-nav .social a:hover {
-  color: #FFA500;
+  color: var(--primary);
 }
 
 .main-nav .social a svg {
@@ -134,7 +135,7 @@ a {
 }
 
 .menu-icon-bounce i {
-  color: #FFA500;
+  color: var(--primary);
 }
 
 @keyframes bounce {
@@ -172,7 +173,7 @@ section {
   min-height: 100vh;
   text-align: center;
   color: #fff;
-  padding-top: 40vh;
+  padding-top: 36vh;
 }
 
 .section-container {
@@ -199,7 +200,7 @@ section {
   position: absolute;
   width: 20px;
   height: 20px;
-  border: solid #FFA500;
+  border: solid var(--primary);
   transition: width 1s, height 1s;
 }
     
@@ -335,75 +336,139 @@ section {
   margin-top: 75px;
 }
 
-.personal-text {
+.about-me .personal-text {
   padding: 40px 20px 0;
 }
 
-.personal-text h2 {
+.about-me .personal-text h2 {
+  color: var(--primary);
   margin-bottom: 25px;
 }
 
+.about-me .personal-text a {
+  display: block;
+  width: fit-content;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+  padding: 0.8rem 1.75rem;
+  margin-top: 30px;
+  transition: linear .2s;
+}
+
+.about-me .personal-text a:hover {
+  text-decoration: none;
+  background: rgba(255, 165, 0, .1)
+}
+
 /* --- Contact Section --- */
-.contact-form span {
-  display: block;
-  width: 510px;
-  margin: 35px auto;
-}
-
-@media (max-width: 768px) {
-  .contact-form {
-    margin-bottom: 150px;
-  }
-
-  .contact-form span {
-    width: 100%;
-  }
-}
-
-.contact-form span::after {
-  display: block;
-  content: '';
-  border-bottom: 2px solid #FFA500;  
-  transform: scaleX(0);  
-  transition: transform 450ms ease-in-out;
-  transform-origin: 0% 50%;
-  margin-top: -1px;
-}
-
-.contact-form span:hover::after{
-  transform: scaleX(1);
-}
-
-.contact-form input, .contact-form textarea {
-  display: block;
-  width: 100%;
-  height: 80px;
+.contact-form {
+  max-width: 540px;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
-  color: #fff;
-  background: transparent;
-  border: 0;
-  border-bottom: 1px solid #555;
+  font-weight: 400;
+  background: rgba(0, 0, 0, 0.25);;
+  border-radius: 4px;
+  padding: 50px 70px;
+  margin: 40px auto 40px;
 }
 
-.contact-form input:focus-visible, .contact-form textarea:focus-visible {
-  outline: 0;
+@media (max-width: 550px) {
+  .contact-form {
+    padding: 50px 45px;
+    margin-bottom: 140px;
+  }
+}
+
+.contact-form .form-group {
+  position: relative;
+  padding-top: 16px;
+  margin-bottom: 40px;
+}
+
+.contact-form .form-group .animated-label {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-weight: 300;
+  cursor: text;
+  color: #999;
+  background: transparent;
+  opacity: 0.5;
+  margin: 0;
+  transition: 0.25s ease all;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  z-index: 2;
+}
+
+.contact-form .form-group .animated-label::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+  height: 2px;
+  width: 10px;
+  visibility: hidden;
+  background-color: var(--primary);
+  transition: 0.4s ease all;
+}
+
+.contact-form .form-group.not-empty .animated-label {
+  top: 0;
+  font-size: 12px;
+  color: var(--primary);
+}
+
+.contact-form .form-group .form-control {
+  position: relative;
+  height: auto;
+  color: #fff;
+  background: transparent !important;
+  border-radius: 0;
+  border-width: 0 0 1px;
+  border-bottom-color: #555;
+  padding: 3px 0 5px;
+  z-index: 1;
+}
+
+.contact-form .form-group .form-control:focus {
+  border-bottom-color: rgba(0, 0, 0, 0.12);
+  box-shadow: none;
+}
+
+.contact-form .form-group .form-control:focus ~ .animated-label {
+  top: 0;
+  font-size: 12px;
+  color: var(--primary);
+  opacity: 1;
+}
+
+.contact-form .form-group .form-control:focus ~ .animated-label::after {
+  visibility: visible;
+  width: 100%;
+  left: 0;
 }
 
 .contact-form button {
   display: block;
   font-size: 18px;
-  color: #FFA500;
-  background: transparent;
+  color: var(--primary);
+  background: linear-gradient(to left, transparent 50%, var(--primary) 50%) right;
+  background-size: 200%;
+  transition: .5s ease-out;
   border: none;
-  border: 1px solid #FFA500;
+  border: 1px solid var(--primary);
   padding: 10px 30px;
   margin: 60px auto 0;
-  transition: linear .2s;
 }
 
 .contact-form button:hover {
-  color: #101010;
-  background: #FFA500;
+  color: #444;
+  background-position: left;
 }
 
 h5.email-sent {

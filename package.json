@@ -15,8 +15,7 @@
     "test": "jest"
   },
   "lint-staged": {
-    "*.{js,vue}": "eslint",
-    "*.{css,vue}": "stylelint"
+    "*.{js,vue}": "eslint"
   },
   "dependencies": {
     "axios": "^0.24.0",

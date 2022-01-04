@@ -42,7 +42,7 @@
       <section id="about" v-scroll-reveal.reset>
         <div class="section-container">
           <h2 class="section-title">About</h2>
-          <div class="row">
+          <div class="row skills-desktop">
             <div class="col-md-3 skill-container">
               <div class="hex-wrap">
                 <div class="hexagon">
@@ -88,10 +88,74 @@
               </div>
             </div>
           </div>
+          <div class="skills-mobile">
+            <b-carousel
+              id="mobile_carousel_skills"
+              v-model="slide"
+              :interval="4000"
+              indicators
+              background="transparent"
+              @sliding-start="onSlideStart"
+              @sliding-end="onSlideEnd"
+            >
+              <b-carousel-slide caption-blank img-blank>
+                <div class="skill-container">
+                  <div class="hex-wrap">
+                    <div class="hexagon">
+                      <i class="material-icons">speed</i>
+                    </div>
+                  </div>
+                  <div class="waypoint">
+                    <h3 class="skill-title">Fast</h3>
+                    <p>Fast load times and lag free interaction, my highest priority.</p>
+                  </div>
+                </div>
+              </b-carousel-slide>
+              <b-carousel-slide caption-blank img-blank>
+                <div class="skill-container">
+                  <div class="hex-wrap">
+                    <div class="hexagon">
+                      <i class="material-icons">devices</i>
+                    </div>
+                  </div>
+                  <div class="waypoint">
+                    <h3 class="skill-title">Responsive</h3>
+                    <p>My layouts will work on any device, big or small.</p>
+                  </div>
+                </div>
+              </b-carousel-slide>
+              <b-carousel-slide caption-blank img-blank>
+                <div class="skill-container">
+                  <div class="hex-wrap">
+                    <div class="hexagon">
+                      <i class="material-icons">lightbulb</i>
+                    </div>
+                  </div>
+                  <div class="waypoint">
+                    <h3 class="skill-title">Intuitive</h3>
+                    <p>Strong preference for easy to use, intuitive UX/UI.</p>
+                  </div>
+                </div>
+              </b-carousel-slide>
+              <b-carousel-slide caption-blank img-blank>
+                <div class="skill-container">
+                  <div class="hex-wrap">
+                    <div class="hexagon">
+                      <i class="material-icons">build</i>
+                    </div>
+                  </div>
+                  <div class="waypoint">
+                    <h3 class="skill-title">Dynamic</h3>
+                    <p>Websites don't have to be static, I love making pages come to life.</p>
+                  </div>
+                </div>
+              </b-carousel-slide>
+            </b-carousel>
+          </div>
           <div class="row about-me">
             <div class="col-md-6 personal-text">
               <h2>About me</h2>
-              <p>I’m a Front-End Developer located in Berlin. I have a serious passion for UI effects, animations and creating intuitive, dynamic user experiences.</p>
+              <p>I'm a Front-End Developer located in Berlin. I have a serious passion for UI effects, animations and creating intuitive, dynamic user experiences.</p>
               <p>Well-organised person, problem solver, independent employee with high attention to detail.</p>
               <p>Interested in the entire frontend spectrum and working on ambitious projects with positive people.</p>
               <a href="CV.pdf" target="_blank">Check out my CV!</a>
@@ -103,9 +167,81 @@
         </div>
       </section>
       <section id="work" v-scroll-reveal.reset>
-        <div class="section-container">     
+        <div class="section-container">
           <h2 class="section-title">Work</h2>
-          <p>Lorem ipsum</p>
+          <h4>Some of the websites I 've built:</h4>
+          <div class="row work-desktop">
+            <div class="col">
+              <a href="https://www.aohostels.com/en/" target="_blank" class="video-container">
+                <video class="work-videos" width="100%" preload="auto" loop>
+                  <source src="videos/aohostels.webm" type='video/webm' />
+                  Your browser does not support the video tag.
+                </video>
+                <div class="video-overlay">
+                  <span>a&o Hotels and Hostels</span>
+                </div>
+              </a>
+            </div>
+            <div class="col">
+              <a href="https://www.rodentgreen.com/" target="_blank" class="video-container">
+                <video class="work-videos" width="100%" preload="auto" loop>
+                  <source src="videos/rodentgreen.webm" type='video/webm' />
+                  Your browser does not support the video tag.
+                </video>
+                <div class="video-overlay">
+                  <span>Rodent Green Management</span>
+                </div>
+              </a>
+            </div>
+            <div class="col">
+              <a href="https://floodbased.org/" target="_blank" class="video-container">
+                <video class="work-videos" width="100%" preload="auto" loop>
+                  <source src="videos/floodbased.webm" type='video/webm' />
+                  Your browser does not support the video tag.
+                </video>
+                <div class="video-overlay">
+                  <span>Flood-Based Livelihoods Network</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="work-mobile">
+            <b-carousel
+              id="mobile_carousel_work"
+              v-model="slide"
+              :interval="4000"
+              controls
+              indicators
+              background="transparent"
+              @sliding-start="onSlideStart"
+              @sliding-end="onSlideEnd"
+            >
+              <b-carousel-slide caption="a&o Hotels and Hostels" img-blank img-alt="a&o Hotels and Hostels">
+                <a href="https://www.aohostels.com/en/" target="_blank">
+                  <video width="100%" preload="auto" loop>
+                    <source src="videos/aohostels.webm" type='video/webm' />
+                    Your browser does not support the video tag.
+                  </video>
+                </a>
+              </b-carousel-slide>
+              <b-carousel-slide caption="Rodent Green Management" img-blank img-alt="Rodent Green Management">
+                <a href="https://www.rodentgreen.com/" target="_blank">
+                  <video width="100%" preload="auto" loop>
+                    <source src="videos/rodentgreen.webm" type='video/webm' />
+                    Your browser does not support the video tag.
+                  </video>
+                </a>
+              </b-carousel-slide>
+              <b-carousel-slide caption="Flood-Based Livelihoods Network" img-blank img-alt="Flood-Based Livelihoods Network">
+                <a href="https://floodbased.org/" target="_blank">
+                  <video width="100%" preload="auto" loop>
+                    <source src="videos/floodbased.webm" type='video/webm' />
+                    Your browser does not support the video tag.
+                  </video>
+                </a>
+              </b-carousel-slide>
+            </b-carousel>
+          </div>
         </div>
       </section>
       <section id="contact" v-scroll-reveal.reset>
@@ -177,8 +313,8 @@
           { name: "JSON" }
         ],
         options: {
-          width: 470,
-          height: 340,
+          width: 360,
+          height: 360,
           radius: 200,
           opacity: 300,
           fontSize: 600
@@ -188,7 +324,9 @@
         message: '',
         endpoint: 'https://formspree.io/f/mnqwqvww',
         email_sent: false,
-        email_failed: false
+        email_failed: false,
+        slide: 0,
+        sliding: null
       };
     },
     mounted() {
@@ -199,6 +337,17 @@
       };
       for (let i = 0; i < elements.length; i++) {
         elements[i].addEventListener('click', myFunction, false);
+      }
+
+      /* Play video on hover */
+      const videos = document.getElementsByClassName("work-videos");
+      for (let i = 0; i < videos.length; i++) {
+        videos[i].addEventListener('mouseover', function() {
+          this.play();
+        });
+        videos[i].addEventListener('mouseleave', function() {
+          this.pause();
+        });
       }
     },
     methods: {
@@ -217,6 +366,12 @@
         else {
           this.email_failed = true;
         }
+      },
+      onSlideStart(slide) {
+        this.sliding = true
+      },
+      onSlideEnd(slide) {
+        this.sliding = false
       }
     }
   };

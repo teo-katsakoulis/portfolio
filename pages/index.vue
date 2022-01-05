@@ -169,11 +169,11 @@
       <section id="work" v-scroll-reveal.reset>
         <div class="section-container">
           <h2 class="section-title">Work</h2>
-          <h4>Some of the websites I 've built:</h4>
+          <h4>Some of the websites I've built:</h4>
           <div class="row work-desktop">
             <div class="col">
-              <a href="https://www.aohostels.com/en/" target="_blank" class="video-container">
-                <video class="work-videos" width="100%" preload="auto" loop>
+              <a href="https://www.aohostels.com/en/" target="_blank" class="video-container container-aohostels" style="background-image: url('screenshots/aohostels_gray.jpg');">
+                <video id="video_aohostels" class="work-videos" width="100%" preload="none" muted loop>
                   <source src="videos/aohostels.webm" type='video/webm' />
                   Your browser does not support the video tag.
                 </video>
@@ -183,8 +183,8 @@
               </a>
             </div>
             <div class="col">
-              <a href="https://www.rodentgreen.com/" target="_blank" class="video-container">
-                <video class="work-videos" width="100%" preload="auto" loop>
+              <a href="https://www.rodentgreen.com/" target="_blank" class="video-container container-rodentgreen" style="background-image: url('screenshots/rodentgreen_gray.jpg');">
+                <video id="video_rodentgreen" class="work-videos" width="100%" preload="none" muted loop>
                   <source src="videos/rodentgreen.webm" type='video/webm' />
                   Your browser does not support the video tag.
                 </video>
@@ -194,8 +194,8 @@
               </a>
             </div>
             <div class="col">
-              <a href="https://floodbased.org/" target="_blank" class="video-container">
-                <video class="work-videos" width="100%" preload="auto" loop>
+              <a href="https://floodbased.org/" target="_blank" class="video-container container-floodbased" style="background-image: url('screenshots/floodbased_gray.jpg');">
+                <video id="video_floodbased" class="work-videos" width="100%" preload="none" muted loop>
                   <source src="videos/floodbased.webm" type='video/webm' />
                   Your browser does not support the video tag.
                 </video>
@@ -218,26 +218,17 @@
             >
               <b-carousel-slide caption="a&o Hotels and Hostels" img-blank img-alt="a&o Hotels and Hostels">
                 <a href="https://www.aohostels.com/en/" target="_blank">
-                  <video width="100%" preload="auto" loop>
-                    <source src="videos/aohostels.webm" type='video/webm' />
-                    Your browser does not support the video tag.
-                  </video>
+                  <img src="screenshots/aohostels_colored.jpg" class="work-img-mobile" alt="aohostels.com">
                 </a>
               </b-carousel-slide>
               <b-carousel-slide caption="Rodent Green Management" img-blank img-alt="Rodent Green Management">
                 <a href="https://www.rodentgreen.com/" target="_blank">
-                  <video width="100%" preload="auto" loop>
-                    <source src="videos/rodentgreen.webm" type='video/webm' />
-                    Your browser does not support the video tag.
-                  </video>
+                  <img src="screenshots/rodentgreen_colored.jpg" class="work-img-mobile" alt="rodentgreen.com">
                 </a>
               </b-carousel-slide>
               <b-carousel-slide caption="Flood-Based Livelihoods Network" img-blank img-alt="Flood-Based Livelihoods Network">
                 <a href="https://floodbased.org/" target="_blank">
-                  <video width="100%" preload="auto" loop>
-                    <source src="videos/floodbased.webm" type='video/webm' />
-                    Your browser does not support the video tag.
-                  </video>
+                  <img src="screenshots/floodbased_colored.jpg" class="work-img-mobile" alt="floodbased.org">
                 </a>
               </b-carousel-slide>
             </b-carousel>
@@ -279,6 +270,7 @@
               <i class="material-icons">picture_as_pdf</i>
             </a>
           </div>
+          <div class="copyright">© 2022 Theofilos Katsakoulis</div>
         </div>
       </section>
     </div>
@@ -340,15 +332,32 @@
       }
 
       /* Play video on hover */
-      const videos = document.getElementsByClassName("work-videos");
-      for (let i = 0; i < videos.length; i++) {
-        videos[i].addEventListener('mouseover', function() {
-          this.play();
-        });
-        videos[i].addEventListener('mouseleave', function() {
-          this.pause();
-        });
-      }
+      document.getElementById("video_aohostels").addEventListener("mouseover", function() {
+        this.muted = true;
+        this.play();
+      });
+      document.getElementById("video_aohostels").addEventListener("mouseleave", function() {
+        this.muted = true;
+        this.pause();
+      });
+
+      document.getElementById("video_rodentgreen").addEventListener("mouseover", function() {
+        this.muted = true;
+        this.play();
+      });
+      document.getElementById("video_rodentgreen").addEventListener("mouseleave", function() {
+        this.muted = true;
+        this.pause();
+      });
+
+      document.getElementById("video_floodbased").addEventListener("mouseover", function() {
+        this.muted = true;
+        this.play();
+      });
+      document.getElementById("video_floodbased").addEventListener("mouseleave", function() {
+        this.muted = true;
+        this.pause();
+      });
     },
     methods: {
       async submitForm() {
@@ -358,9 +367,8 @@
           message: this.message,
         }
         const response = await axios.post(this.endpoint, data);
-        this.$refs.anyName.reset();
+        
         if (response.status === 200) {
-          
           this.email_sent = true;
         }
         else {

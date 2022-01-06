@@ -470,7 +470,7 @@ section {
   background: rgba(24, 24, 24, .9);
   background-size: 100% 101%;
   border: 10px solid;
-  border-image-slice: 1;
+  border-image-slice: 1 !important;
   border-width: 2px;
   border-image-source: linear-gradient(to left, #d1c0a2, #e1b056);
 }

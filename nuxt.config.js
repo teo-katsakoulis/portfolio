@@ -26,7 +26,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/portfolio/logo.png' }
     ]
   },
 
@@ -59,7 +59,8 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
-    'nuxt-material-design-icons-iconfont'
+    'nuxt-material-design-icons-iconfont',
+    'nuxt-lazy-load'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

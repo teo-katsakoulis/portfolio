@@ -23,6 +23,7 @@
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.15.1",
     "nuxt": "^2.15.7",
+    "nuxt-lazy-load": "^1.2.9",
     "nuxt-material-design-icons-iconfont": "^1.0.2",
     "sog-tag-cloud": "^0.1.0",
     "vue-axios": "^3.4.0",

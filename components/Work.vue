@@ -1,7 +1,7 @@
 <template>
   <div class="section-container">
     <h2 class="section-title">Work</h2>
-    <h4>Some of the websites I've worked:</h4>
+    <h4>Some of the websites I've developed:</h4>
     <div class="work-desktop">
       <div class="row work-container">
         <div class="col-md-4">

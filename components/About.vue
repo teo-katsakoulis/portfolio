@@ -115,7 +115,7 @@
       <div class="col-md-6 personal-text">
         <h2>About me</h2>
         <p>I'm a Front-End Developer located in Berlin. I have a serious passion for UI effects, animations and creating intuitive, dynamic user experiences.</p>
-        <p>Well-organised person, problem solver, independent employee with high attention to detail.</p>
+        <p>Well-organized person, problem solver, independent employee with high attention to detail.</p>
         <p>Interested in the entire frontend spectrum and working on ambitious projects with positive people.</p>
         <a href="documents/CV.pdf" target="_blank">Check out my CV!</a>
       </div>

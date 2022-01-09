@@ -583,6 +583,10 @@ video::-webkit-media-controls {
 
 
 /* --- Contact Section --- */
+#contact {
+  position: relative;
+}
+
 .contact-form {
   max-width: 590px;
   font-family: "Roboto", sans-serif;

@@ -5,15 +5,15 @@
     <h5 v-if="email_failed" class="email-failed"><i class="material-icons">sentiment_dissatisfied</i> Message was not sent, please try again</h5>
     <form class="contact-form" @submit.prevent="submitForm">
       <div class="form-group" :class="{ 'not-empty': name !== '' }">
-        <input v-model="name" type="text" id="name" name="name" class="form-control" />
+        <input v-model="name" type="text" id="name" name="name" class="form-control" required />
         <label for="name" class="animated-label">Name</label>
       </div>
       <div class="form-group" :class="{ 'not-empty': email !== '' }">
-        <input v-model="email" type="email" id="email" name="email" class="form-control" />
+        <input v-model="email" type="email" id="email" name="email" class="form-control" required />
         <label for="email" class="animated-label">Email</label>
       </div>
       <div class="form-group" :class="{ 'not-empty': message !== '' }">
-        <textarea v-model="message" id="message" name="message" class="form-control"></textarea>
+        <textarea v-model="message" id="message" name="message" class="form-control" required></textarea>
         <label for="message" class="animated-label">Message</label>
       </div>
       <button type="submit">Submit</button>

@@ -9,8 +9,10 @@
   --error-bg: #FFBABA;
  }
 
-html {
-  scroll-behavior: smooth;
+ @media (max-width: 768px) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 a {
@@ -286,6 +288,11 @@ section {
   position: relative;
   width: fit-content;
   margin: 0 auto;
+}
+
+.main-title h2 {
+  font-size: 2.2rem;
+  margin-top: 5px !important;
 }
 
 /* VueTyper */

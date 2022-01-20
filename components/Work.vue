@@ -86,7 +86,7 @@
             <img src="screenshots/rodentgreen_colored.jpg" class="work-img-mobile" alt="rodentgreen.com">
           </a>
         </b-carousel-slide>
-        <b-carousel-slide caption="Flood-Based Livelihoods Network" img-blank img-alt="Flood-Based Livelihoods Network">
+        <b-carousel-slide caption="Flood-Based Livelihoods" img-blank img-alt="Flood-Based Livelihoods Network">
           <a href="https://floodbased.org/" target="_blank">
             <img src="screenshots/floodbased_colored.jpg" class="work-img-mobile" alt="floodbased.org">
           </a>

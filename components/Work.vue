@@ -78,31 +78,31 @@
       >
         <b-carousel-slide caption="a&o Hotels and Hostels" img-blank img-alt="a&o Hotels and Hostels">
           <a href="https://www.aohostels.com/en/" target="_blank">
-            <img src="screenshots/aohostels_colored.jpg" class="work-img-mobile" alt="aohostels.com">
+            <img src="screenshots/aohostels_colored.jpg" class="work-img-mobile" alt="aohostels.com" width="230" height="382">
           </a>
         </b-carousel-slide>
         <b-carousel-slide caption="Rodent Green Management" img-blank img-alt="Rodent Green Management">
           <a href="https://www.rodentgreen.com/" target="_blank">
-            <img src="screenshots/rodentgreen_colored.jpg" class="work-img-mobile" alt="rodentgreen.com">
+            <img src="screenshots/rodentgreen_colored.jpg" class="work-img-mobile" alt="rodentgreen.com" width="230" height="382">
           </a>
         </b-carousel-slide>
         <b-carousel-slide caption="Flood-Based Livelihoods" img-blank img-alt="Flood-Based Livelihoods Network">
           <a href="https://floodbased.org/" target="_blank">
-            <img src="screenshots/floodbased_colored.jpg" class="work-img-mobile" alt="floodbased.org">
+            <img src="screenshots/floodbased_colored.jpg" class="work-img-mobile" alt="floodbased.org" width="230" height="382">
           </a>
         </b-carousel-slide>
         <b-carousel-slide caption="Wintergarten Berlin" img-blank img-alt="Wintergarten Berlin">
           <a href="https://wintergarten-berlin.de/" target="_blank">
-            <img src="screenshots/wintergarten_colored.jpg" class="work-img-mobile" alt="wintergarten-berlin.de">
+            <img src="screenshots/wintergarten_colored.jpg" class="work-img-mobile" alt="wintergarten-berlin.de" width="230" height="382">
           </a>
         </b-carousel-slide>
         <b-carousel-slide caption="Intrel UOC" img-blank img-alt="Intrel UOC">
           <a href="https://www.uoc.gr/intrel/en/" target="_blank">
-            <img src="screenshots/intrel_colored.jpg" class="work-img-mobile" alt="uoc.gr/intrel">
+            <img src="screenshots/intrel_colored.jpg" class="work-img-mobile" alt="uoc.gr/intrel" width="230" height="382">
           </a>
         </b-carousel-slide>
         <b-carousel-slide caption="Paperplain GmbH" img-blank img-alt="Paperplain GmbH">
-          <img src="screenshots/paperplain_gray.jpg" class="work-img-mobile" alt="paperplain gmbh">
+          <img src="screenshots/paperplain_gray.jpg" class="work-img-mobile" alt="paperplain gmbh" width="230" height="382">
         </b-carousel-slide>
       </b-carousel>
     </div>
